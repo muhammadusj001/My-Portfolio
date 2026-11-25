@@ -1,0 +1,61 @@
+# dist is this project's website source, not disposable build output.
+!dist/
+!dist/**
+
+# Dependencies, hosting state and caches.
+node_modules/
+.vercel/
+.netlify/
+.cache/
+.npm/
+.pnpm-store/
+coverage/
+
+# Secrets, local environment and credential files.
+.env
+.env.*
+*.env
+.aws/
+.ssh/
+.codex/
+.agents/
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Private originals and identity documents must never enter Git history.
+private/
+originals/
+unredacted/
+*-original.*
+*-unredacted.*
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+# Only the reviewed, permanently redacted public letter is approved.
+!dist/assets/documents/gamage-internship-letter-redacted.pdf
+
+# Temporary inspection files, exports, logs and OS/editor state.
+tmp/
+temp/
+.qa*
+.theme-baseline.json
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.zip
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,1 @@
+{"name":"saajith-portfolio","version":"1.0.0","private":true,"description":"Portable static personal portfolio","scripts":{"dev":"node server.cjs","start":"node server.cjs","check":"node --check dist/script.js"}}
