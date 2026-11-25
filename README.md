@@ -6,6 +6,42 @@ A portable, dependency-free portfolio built with HTML, CSS, and JavaScript. The 
 
 Open `dist/index.html` directly, or install Node.js and run `npm start` or `npm run dev` from this folder. Open http://127.0.0.1:4173. Stop the server with Ctrl+C. No `npm install` or build step is required. `npm run check` checks JavaScript syntax.
 
+## Vercel settings — prepared, not deployed
+
+The inspected project is a buildless static HTML/CSS/JavaScript website. Its public entry point is `dist/index.html`; `dist` also contains the stylesheet, script, favicon, profile photo and redacted document assets. The root `vercel.json` declares:
+
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "dist"
+}
+```
+
+For a future Vercel import of `muhammadusj001/My-Portfolio`, use these exact settings:
+
+| Setting | Value |
+| --- | --- |
+| Repository | `https://github.com/muhammadusj001/My-Portfolio` |
+| Production branch | `main` |
+| Root Directory | Repository root (`./`), where `vercel.json` and `package.json` are located |
+| Framework Preset | **Other** (`framework: null`) |
+| Build Command | Enable Override and leave the value empty (`buildCommand: ""`) |
+| Output Directory | `dist` |
+| Install Command | Leave the default; this project has no package dependencies and needs no custom install command |
+| Environment variables | None required |
+
+Keep the Root Directory at the repository root; the Output Directory selects `dist`. `server.cjs`, `npm start` and `npm run dev` are for local preview only. Do not use them as a Build Command or configure `server.cjs` as a Vercel server. Navigation uses page fragments, so no catch-all rewrite is required. Only `dist` is intended to be served publicly.
+
+These settings follow Vercel's [static-site build instructions](https://vercel.com/docs/builds/configure-a-build#skip-build-step) and [configuration schema](https://openapi.vercel.sh/vercel.json). This preparation does not create a Vercel project, run a deployment or change repository visibility.
+
+The personal LinkedIn URL is still unconfigured (`LINKEDIN_URL` in `dist/script.js`). Its existing service-home link and visible pending label remain unchanged; replace it only with a confirmed personal profile URL.
+
+Deployment-readiness checks passed for JSON configuration, JavaScript/server syntax, exact-case asset paths, all fragment/document targets, stylesheet/SVG structure, public-file privacy review and scripted menu/navigation/filter/dialog/motion behavior. A local HTTP smoke test served all seven public files with the correct content types and exact bytes; repository-level server/configuration files were not publicly served. The GitHub profile and research repository were reachable through GitHub's API, and the research showcase returned HTTP 200. No website source, content, styling or asset changes were needed.
+
+Live browser verification could not run because the computer-use service timed out during availability checks. Rendered desktop/mobile geometry, real pointer/keyboard behavior and the browser console therefore remain unverified. No Vercel build or deployment was run.
+
 ## Design and behavior
 
 - The light palette is centralized in `:root` custom properties in `dist/style.css`, including derived green shadow and overlay tokens. The standalone favicon has matching local palette tokens. White and pale green surfaces use dark text; the deep emerald contact section uses white text and focus indicators. The profile photograph retains its original colors.
