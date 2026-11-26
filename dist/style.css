@@ -532,3 +532,5 @@ a:hover { color: var(--accent-hover); }
   .portrait-backplate { transform: none; }
   .button:hover { transform: none; }
 }
+
+.education-records { display: grid; gap: 24px; min-width: 0; }

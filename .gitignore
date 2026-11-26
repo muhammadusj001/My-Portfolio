@@ -38,7 +38,7 @@ unredacted/
 *.docx
 *.xls
 *.xlsx
-# Only the reviewed, permanently redacted public letter is approved.
+# Allow only reviewed, permanently redacted public documents.
 !dist/assets/documents/gamage-internship-letter-redacted.pdf
 
 # Temporary inspection files, exports, logs and OS/editor state.
@@ -59,3 +59,6 @@ Thumbs.db
 Desktop.ini
 .vscode/
 .idea/
+
+!dist/assets/documents/esoft-ditec-certificate-redacted.pdf
+!dist/assets/documents/esoft-ditec-transcript-redacted.pdf

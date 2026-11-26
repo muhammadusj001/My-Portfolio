@@ -116,12 +116,12 @@ const LINKEDIN_URL = '';
   filterButtons.forEach(button => {
     button.addEventListener('click', () => setCredentialFilter(button));
   });
-  // A direct experience link must reveal the card even after another filter was selected.
-  document.querySelectorAll('a[href="#internship-letter"]').forEach(link => {
+  // Documentation links reveal their card even after another filter was selected.
+  document.querySelectorAll('a[href="#internship-letter"], a[href="#esoft-ditec-certificate"]').forEach(link => {
     link.addEventListener('click', () => {
-      const card = document.querySelector('#internship-letter');
+      const card = document.getElementById(link.hash.slice(1));
       if (!card) return;
-      if (card.hidden) setCredentialFilter(filterButtons.find(button => button.dataset.filter === 'experience'));
+      if (card.hidden) setCredentialFilter(filterButtons.find(button => button.dataset.filter === card.dataset.category));
       card.focus({ preventScroll: true });
     });
   });
