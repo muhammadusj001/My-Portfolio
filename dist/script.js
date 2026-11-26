@@ -117,7 +117,7 @@ const LINKEDIN_URL = '';
     button.addEventListener('click', () => setCredentialFilter(button));
   });
   // Documentation links reveal their card even after another filter was selected.
-  document.querySelectorAll('a[href="#internship-letter"], a[href="#esoft-ditec-certificate"]').forEach(link => {
+  document.querySelectorAll('a[href="#internship-letter"], a[href="#esoft-ditec-certificate"], a[href="#gce-advanced-level-results"], a[href="#gce-ordinary-level-results"]').forEach(link => {
     link.addEventListener('click', () => {
       const card = document.getElementById(link.hash.slice(1));
       if (!card) return;
